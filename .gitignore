@@ -1,0 +1,22 @@
+# build artifacts
+build/
+bin/
+obj/
+*.o
+*.out
+*.exe
+
+# the compiled test binary
+test_state
+
+# IDE / editor folders
+.vscode/
+.vs/
+.idea/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# valgrind output if you save logs to file
+*.log
