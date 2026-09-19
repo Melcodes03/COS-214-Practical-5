@@ -20,3 +20,7 @@ Thumbs.db
 
 # valgrind output if you save logs to file
 *.log
+
+
+test_state/*
+!test_state/test_state.cpp
