@@ -4,6 +4,7 @@
 #include "CampusCommand.h"
 
 #include "CampusCommand.h"
+#include "CampusComponent.h"
 class DispatchSecurityCommand : public CampusCommand {
 
 private:

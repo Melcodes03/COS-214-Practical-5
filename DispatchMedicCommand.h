@@ -2,6 +2,7 @@
 #define DISPATCHMEDICCOMMAND_H
 
 #include "CampusCommand.h"
+#include "CampusComponent.h"
 
 class DispatchMedicCommand : public CampusCommand {
 

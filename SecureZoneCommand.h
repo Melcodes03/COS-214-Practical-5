@@ -2,6 +2,7 @@
 #define SECUREZONECOMMAND_H
 
 #include "CampusCommand.h"
+#include "CampusComponent.h"
 
 class SecureZoneCommand : public CampusCommand {
 	private:
