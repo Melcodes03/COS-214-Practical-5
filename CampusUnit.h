@@ -6,7 +6,7 @@
 #include <string>
 #include "CampusComponent.h"
 
-class CampusUnit : public CampusComponet {
+class CampusUnit : public CampusComponent {
 private:
 	ZoneState* state;
 	AccessPoint* ap;
