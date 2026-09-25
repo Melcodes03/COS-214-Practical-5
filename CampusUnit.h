@@ -8,13 +8,13 @@
 
 class CampusUnit : public CampusComponet {
 private:
-	IncidentState* state;
+	ZoneState* state;
 	AccessPoint* ap;
 
 public:
-	CampusUnit(IncidentState* st, AccessPoint* ap);
+	CampusUnit(ZoneState* st, AccessPoint* ap);
 
-	void transition(IncidentState* st);
+	void transition(ZoneState* st);
 
 	virtual void send(std::string event);
 

@@ -1,11 +1,11 @@
 #include "CampusUnit.h"
 
-CampusUnit::CampusUnit(IncidentState* st, AccessPoint* ap){
+CampusUnit::CampusUnit(ZoneState* st, AccessPoint* ap){
 	this->ap = ap;
 	this->state = st;
 }
 
-void CampusUnit::transition(IncidentState* st) {
+void CampusUnit::transition(ZoneState* st) {
 	if(this->state != nullptr){
 		delete this->state;
 	}
