@@ -22,10 +22,6 @@ public:
 
 	virtual bool isLocked();
 
-	virtual void send(std::string event);
-
-	virtual void receive(std::string event);
-
 	virtual ~CampusArea();
 };
 

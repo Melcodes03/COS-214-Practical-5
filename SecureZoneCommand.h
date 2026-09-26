@@ -3,16 +3,15 @@
 
 #include "CampusCommand.h"
 #include "CampusComponent.h"
+#include "FacilitiesUnit.h"
 
 class SecureZoneCommand : public CampusCommand {
-	private:
+private:
+	FacilitiesUnit* facilities;
 	CampusComponent* target;
 
 public:
-	
-
-	SecureZoneCommand(CampusComponent* area);
-
+	SecureZoneCommand(FacilitiesUnit* fac, CampusComponent* area);
 	virtual void execute();
 };
 
