@@ -3,6 +3,7 @@
 
 #include "CampusCommand.h"
 #include "CampusComponent.h"
+#include "MedicUnit.h"
 
 class DispatchMedicCommand : public CampusCommand {
 

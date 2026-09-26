@@ -1,4 +1,5 @@
 #include "CampusArea.h"
+#include <algorithm>
 
 CampusArea::CampusArea(){
 
@@ -39,15 +40,6 @@ bool CampusArea::isLocked() {
     return true;
 }
 
-void CampusArea::send(string event) {
-	// TODO - implement CampusArea::send
-	throw "Not yet implemented";
-}
-
-void CampusArea::receive(string event) {
-	// TODO - implement CampusArea::receive
-	throw "Not yet implemented";
-}
 
 CampusArea::~CampusArea(){
 	for(auto& comp : this->components){

@@ -1,32 +1,26 @@
 #ifndef CAMPUSUNIT_H
 #define CAMPUSUNIT_H
 
-#include "IncidentState.h"
-#include "AccessPoint.h"
+#include "ZoneState.h"
 #include <string>
 #include "CampusComponent.h"
 
-class CampusUnit : public CampusComponet {
+class CampusUnit : public CampusComponent {
 private:
-	ZoneState* state;
-	AccessPoint* ap;
+    ZoneState* state; 
 
 public:
-	CampusUnit(ZoneState* st, AccessPoint* ap);
-
-	void transition(ZoneState* st);
-
-	virtual void send(std::string event);
-
-	virtual void receive(std::string event);
-
-	virtual bool isLocked();
-
-	virtual void secure();
-
-	virtual void unlock();
-
-	virtual ~CampusUnit();
+    CampusUnit(ZoneState* st);
+    
+    void transition(ZoneState* st);
+    
+    virtual void add(CampusComponent* cmp) override;    
+    virtual void remove(CampusComponent* cmp) override; 
+    
+    virtual bool isLocked() override;
+    virtual void secure() override;
+    virtual void unlock() override;
+    virtual ~CampusUnit();
 };
 
 #endif

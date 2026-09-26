@@ -1,51 +1,44 @@
 #include "CampusUnit.h"
+#include "UnlockedState.h" 
 
-CampusUnit::CampusUnit(ZoneState* st, AccessPoint* ap){
-	this->ap = ap;
-	this->state = st;
+CampusUnit::CampusUnit(ZoneState* st){
+    this->state = st;
 }
 
 void CampusUnit::transition(ZoneState* st) {
-	if(this->state != nullptr){
-		delete this->state;
-	}
-
-	this->state = st;
-
-}
-
-void CampusUnit::send(std::string event) {
-	// TODO - implement CampusUnit::send
-	throw "Not yet implemented";
-}
-
-void CampusUnit::receive(std::string event) {
-	// TODO - implement CampusUnit::receive
-	throw "Not yet implemented";
+    if(this->state != nullptr){
+        delete this->state;
+    }
+    this->state = st;
 }
 
 bool CampusUnit::isLocked() {
-	if(this->ap != nullptr){
-		this->ap->isLocked();
-	}
-
-	return false;
+    if (this->state != nullptr) {
+        return this->state->getStatusName() == "Locked"; 
+    }
+    return false;
 }
 
 void CampusUnit::secure() {
-	if(this->ap != nullptr){
-		this->ap->secure();
-	}
+    if (this->state != nullptr && this->state->getStatusName() == "Unlocked") {
+        this->state->handle(*this); 
+    }
 }
 
 void CampusUnit::unlock() {
-	if(this->ap != nullptr){
-		this->ap->unlock();
-	}
+    if (this->state != nullptr && this->state->getStatusName() == "Locked") {
+        this->transition(new UnlockedState()); 
+    }
 }
 
 CampusUnit::~CampusUnit(){
-	delete this->ap;
-	delete this->state;
+    delete this->state;
+}
 
+void CampusUnit::add(CampusComponent* cmp) {
+    
+}
+
+void CampusUnit::remove(CampusComponent* cmp) {
+    
 }
