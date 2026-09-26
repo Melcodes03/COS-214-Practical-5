@@ -16,7 +16,5 @@ void AlertService::receive(std::string event) {
         broadcast("Affected area has been secured.");
     } else if (event == "STAND_DOWN") {
         broadcast("Incident resolved. Normal operations resumed.");
-    } else {
-        std::cout << "[" << getName() << "] received unhandled event: " << event << std::endl;
-    }
+    } 
 }

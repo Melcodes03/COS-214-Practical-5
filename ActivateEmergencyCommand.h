@@ -3,6 +3,7 @@
 
 #include <string>
 #include "CampusCommand.h"
+#include "AlertService.h"
 
 class ActivateEmergencyCommand : public CampusCommand {
 

@@ -23,7 +23,5 @@ void SecurityUnit::receive(std::string event) {
     } else if (event == "STAND_DOWN") {
         onStandby = false;
         std::cout << "[" << getName() << "] standing down." << std::endl;
-    } else {
-        std::cout << "[" << getName() << "] received unhandled event: " << event << std::endl;
-    }
+    } 
 }

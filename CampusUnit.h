@@ -10,9 +10,12 @@ private:
     ZoneState* state; 
 
 public:
-    CampusUnit(ZoneState* st); 
+    CampusUnit(ZoneState* st);
     
     void transition(ZoneState* st);
+    
+    virtual void add(CampusComponent* cmp) override;    
+    virtual void remove(CampusComponent* cmp) override; 
     
     virtual bool isLocked() override;
     virtual void secure() override;

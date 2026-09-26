@@ -1,4 +1,5 @@
 #include "CampusArea.h"
+#include <algorithm>
 
 CampusArea::CampusArea(){
 

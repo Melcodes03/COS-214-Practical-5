@@ -34,3 +34,11 @@ void CampusUnit::unlock() {
 CampusUnit::~CampusUnit(){
     delete this->state;
 }
+
+void CampusUnit::add(CampusComponent* cmp) {
+    
+}
+
+void CampusUnit::remove(CampusComponent* cmp) {
+    
+}

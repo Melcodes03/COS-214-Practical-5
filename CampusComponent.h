@@ -10,7 +10,7 @@ public:
 	virtual void secure() = 0;
 	virtual void unlock() = 0;
 	virtual bool isLocked() = 0;
-	virtual ~CampusComponent() {}
+	virtual ~CampusComponent();
 };
 
 #endif

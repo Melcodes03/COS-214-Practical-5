@@ -25,7 +25,5 @@ void MedicUnit::receive(std::string event) {
     } else if (event == "STAND_DOWN") {
         dispatched = false;
         std::cout << "[" << getName() << "] standing down." << std::endl;
-    } else {
-        std::cout << "[" << getName() << "] received unhandled event: " << event << std::endl;
-    }
+    } 
 }
