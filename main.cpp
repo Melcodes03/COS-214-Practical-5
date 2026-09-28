@@ -113,5 +113,31 @@ int main() {
                   << "assignment left unchanged." << std::endl;
     }
 
+    printScenario("SCENARIO 3: Escalation and System Stand Down",
+                  "Hitting remaining state transitions, unlock procedures, and coordinator branches");
+
+    // test to resolved state
+    std::cout << "-- Testing Incident State Escalation --" << std::endl;
+    suspiciousActivity.transition(); 
+    suspiciousActivity.transition(); 
+
+    // test to evacuation state
+    std::cout << "\n-- Testing Zone State Escalation --" << std::endl;
+    blockC.secure(); 
+    blockC.secure(); 
+
+    // test unlocking
+    std::cout << "\n-- Testing Hardware and Logical Unlocking --" << std::endl;
+    blockC.unlock();          
+    blockCAccess1.unlock();   
+
+    std::cout << "\n-- Testing Mediator Threat and Stand Down Broadcasts --" << std::endl;
+    coordinator.respondToBuildingThreat();
+    security.send("INCIDENT_RESOLVED"); 
+
+    std::cout << "\n-- Testing Composite Memory Management --" << std::endl;
+    blockC.remove(roomC1);
+    roomC1->remove(nullptr);
+
     return 0;
 }
