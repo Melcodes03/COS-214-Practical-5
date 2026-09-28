@@ -1,0 +1,8 @@
+services:
+  campusguard:
+    build: .
+    container_name: campus_guard_app
+    # These two lines ensure standard input/output stay open 
+    # which is useful if your application requires interactive terminal input
+    stdin_open: true 
+    tty: true
