@@ -139,5 +139,9 @@ int main() {
     blockC.remove(roomC1);
     roomC1->remove(nullptr);
 
+    // roomC1 was taken out of blockC above, so blockC's destructor no
+    // longer owns it - it's ours to clean up now, or it leaks
+    delete roomC1;
+
     return 0;
 }
