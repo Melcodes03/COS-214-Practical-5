@@ -24,3 +24,7 @@ Thumbs.db
 
 test_state/*
 !test_state/test_state.cpp
+# main executables
+CampusGuard
+CampusGuard_test
+*_test
